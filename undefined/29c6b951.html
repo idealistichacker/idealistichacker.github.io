@@ -1,0 +1,361 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>NLP学习梳理 | 寒酥梦的温暖小窝（施工中ing）</title><meta name="author" content="寒酥梦"><meta name="copyright" content="寒酥梦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="NLP学习梳理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NLP学习梳理">
+<meta property="og:url" content="http://idealistichacker.github.io.git/undefined/29c6b951.html">
+<meta property="og:site_name" content="寒酥梦的温暖小窝（施工中ing）">
+<meta property="og:description" content="NLP学习梳理">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://idealistichacker.github.io.git/img/essay.jpg">
+<meta property="article:published_time" content="2025-06-05T14:36:00.000Z">
+<meta property="article:modified_time" content="2025-06-05T14:36:42.206Z">
+<meta property="article:author" content="寒酥梦">
+<meta property="article:tag" content="CS">
+<meta property="article:tag" content="NLP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://idealistichacker.github.io.git/img/essay.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "NLP学习梳理",
+  "url": "http://idealistichacker.github.io.git/undefined/29c6b951.html",
+  "image": "http://idealistichacker.github.io.git/img/essay.jpg",
+  "datePublished": "2025-06-05T14:36:00.000Z",
+  "dateModified": "2025-06-05T14:36:42.206Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "寒酥梦",
+      "url": "http://idealistichacker.github.io.git/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://idealistichacker.github.io.git/undefined/29c6b951.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":3,"unescape":true,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'NLP学习梳理',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background: linear-gradient(135deg, #87CEEB 10%, #00BFFF 100%);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/./img/ava.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光小溪</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(./img/essay.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">寒酥梦的温暖小窝（施工中ing）</span></a><a class="nav-page-title" href="/"><span class="site-name">NLP学习梳理</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光小溪</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">NLP学习梳理<a class="post-edit-link" href="https://space.bilibili.com/23191782?spm_id_from=333.337.0.0_posts/计算机/NLP学习梳理.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-06-05T14:36:00.000Z" title="发表于 2025-06-05 22:36:00">2025-06-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-06-05T14:36:42.206Z" title="更新于 2025-06-05 22:36:42">2025-06-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CS/">CS</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CS/NLP/">NLP</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">2.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="NLP学习梳理"><a href="#NLP学习梳理" class="headerlink" title="NLP学习梳理"></a>NLP学习梳理</h1><h2 id="吴恩达《自然语言处理-natural-language-processing》Lesson1"><a href="#吴恩达《自然语言处理-natural-language-processing》Lesson1" class="headerlink" title="吴恩达《自然语言处理|natural language processing》Lesson1"></a>吴恩达《自然语言处理|natural language processing》Lesson1</h2><h3 id="Week1"><a href="#Week1" class="headerlink" title="Week1"></a>Week1</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    Preprocess --&gt; b[Building and Visualizing word frequencies] --&gt;c[Run Logistic Regression Model]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Preprocess"><a href="#Preprocess" class="headerlink" title="Preprocess"></a>Preprocess</h3><p>Use the <a target="_blank" rel="noopener" href="http://www.nltk.org/howto/twitter.html">Natural Language Toolkit (NLTK)</a> package, an open-source Python library for natural language processing.Use its Twitter dataset that contains 5000 positive tweets and 5000 negative tweets exactly and has been manually annotated.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> nltk                                <span class="comment"># Python library for NLP</span></span><br><span class="line"><span class="keyword">from</span> nltk.corpus <span class="keyword">import</span> twitter_samples    <span class="comment"># sample Twitter dataset from NLTK</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt            <span class="comment"># library for visualization</span></span><br><span class="line"><span class="keyword">import</span> random                              <span class="comment"># pseudo-random number generator</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># downloads sample twitter dataset</span></span><br><span class="line">nltk.download(<span class="string">&#x27;twitter_samples&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Load dataset:</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># select the set of positive and negative tweets</span></span><br><span class="line">all_positive_tweets = twitter_samples.strings(<span class="string">&#x27;positive_tweets.json&#x27;</span>)</span><br><span class="line">all_negative_tweets = twitter_samples.strings(<span class="string">&#x27;negative_tweets.json&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>nltk.corpus.twitter_samples</code> 作为一个特定的语料库加载器，它继承了NLTK语料库读取器的一些通用方法，并提供了一些特定于其数据结构的方法。</p>
+<p>以下是 <code>twitter_samples</code> 对象最常用的方法：</p>
+<ol>
+<li><p><strong><code>fileids()</code></strong>:</p>
+<ul>
+<li><p><strong>作用：</strong> 返回 <code>twitter_samples</code> 语料库中所有可用文件的ID（即文件名）列表。</p>
+</li>
+<li><p>示例：</p>
+<p>Python</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from nltk.corpus import twitter_samples</span><br><span class="line">print(twitter_samples.fileids())</span><br><span class="line"># 输出可能类似：[&#x27;negative_tweets.json&#x27;, &#x27;positive_tweets.json&#x27;, &#x27;tweets.20150430-223406.json&#x27;]</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong><code>strings(fileid)</code></strong>:</p>
+<ul>
+<li><p><strong>作用：</strong> 从指定的 <code>fileid</code> 文件中提取并返回所有推文的<strong>纯文本内容</strong>，作为一个字符串列表。这是最常用的方法之一，因为它直接提供用于NLP处理的文本。</p>
+</li>
+<li><p><strong>参数：</strong> <code>fileid</code> (字符串) - 要读取的文件ID，例如 <code>&#39;positive_tweets.json&#39;</code>。</p>
+</li>
+<li><p>示例：</p>
+<p>Python</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from nltk.corpus import twitter_samples</span><br><span class="line">positive_tweets = twitter_samples.strings(&#x27;positive_tweets.json&#x27;)</span><br><span class="line">print(positive_tweets[0])</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong><code>tokenized(fileid)</code></strong>:</p>
+<ul>
+<li><p><strong>作用：</strong> 从指定的 <code>fileid</code> 文件中提取推文，并对每条推文进行<strong>分词（tokenize）</strong>，返回一个列表的列表，其中每个内部列表代表一条推文的单词（或token）。</p>
+</li>
+<li><p><strong>参数：</strong> <code>fileid</code> (字符串) - 要读取的文件ID。</p>
+</li>
+<li><p>示例：</p>
+<p>Python</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from nltk.corpus import twitter_samples</span><br><span class="line">tokenized_tweets = twitter_samples.tokenized(&#x27;positive_tweets.json&#x27;)</span><br><span class="line">print(tokenized_tweets[0])</span><br><span class="line"># 输出可能类似：[&#x27;#FollowFriday&#x27;, &#x27;@France_Inte&#x27;, &#x27;@PKuchly57&#x27;, &#x27;@Milipol_Paris&#x27;, &#x27;for&#x27;, &#x27;being&#x27;, &#x27;top&#x27;, &#x27;engaged&#x27;, &#x27;members&#x27;, &#x27;in&#x27;, &#x27;my&#x27;, &#x27;community&#x27;, &#x27;this&#x27;, &#x27;week&#x27;, &#x27;:)&#x27;]</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong><code>docs(fileid)</code></strong>:</p>
+<ul>
+<li><p><strong>作用：</strong> 从指定的 <code>fileid</code> 文件中读取原始的 JSON 数据，并将其作为 <strong>Python 字典对象</strong>的生成器返回。每个字典代表一条推文的完整JSON结构。</p>
+</li>
+<li><p><strong>参数：</strong> <code>fileid</code> (字符串) - 要读取的文件ID。</p>
+</li>
+<li><p>示例：</p>
+<p>Python</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from nltk.corpus import twitter_samples</span><br><span class="line">import json # 用于美化打印</span><br><span class="line">               </span><br><span class="line">raw_docs_generator = twitter_samples.docs(&#x27;positive_tweets.json&#x27;)</span><br><span class="line">first_doc = next(raw_docs_generator)</span><br><span class="line">print(json.dumps(first_doc, indent=2, ensure_ascii=False))</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><code>twitter_samples</code> 主要提供了这三个核心方法来访问其内置的Twitter数据：</p>
+<ul>
+<li><code>fileids()</code>: 查看有哪些数据文件可用。</li>
+<li><code>strings()</code>: 获取纯文本推文列表（最常见用于直接的文本处理）。</li>
+<li><code>tokenized()</code>: 获取已分词的推文列表（方便进行词级别的分析）。</li>
+<li><code>docs()</code>: 获取原始的JSON字典列表（如果你需要推文的元数据，如ID、用户、时间等）。</li>
+</ul>
+<p>这些方法使得用户可以方便地加载和使用Twitter数据集，特别是在情感分析和其他推文文本处理任务中。</p>
+</blockquote>
+<p><strong>Be more familiar with your data:</strong></p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Number of positive tweets: &#x27;</span>, <span class="built_in">len</span>(all_positive_tweets))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Number of negative tweets: &#x27;</span>, <span class="built_in">len</span>(all_negative_tweets))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\nThe type of all_positive_tweets is: &#x27;</span>, <span class="built_in">type</span>(all_positive_tweets))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;The type of a tweet entry is: &#x27;</span>, <span class="built_in">type</span>(all_negative_tweets[<span class="number">0</span>]))</span><br></pre></td></tr></table></figure>
+
+<p>The result is :</p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Number of positive tweets:  5000</span><br><span class="line">Number of negative tweets:  5000</span><br><span class="line"></span><br><span class="line">The type of all_positive_tweets is:  &lt;class &#x27;list&#x27;&gt;</span><br><span class="line">The type of a tweet entry is:  &lt;class &#x27;str&#x27;&gt;</span><br></pre></td></tr></table></figure></blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># print positive in greeen</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\033[92m&#x27;</span> + all_positive_tweets[random.randint(<span class="number">0</span>,<span class="number">5000</span>)])</span><br><span class="line"></span><br><span class="line"><span class="comment"># print negative in red</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\033[91m&#x27;</span> + all_negative_tweets[random.randint(<span class="number">0</span>,<span class="number">5000</span>)])</span><br></pre></td></tr></table></figure>
+
+<p>Result:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@charliehaarding @WeAlIlKnowA @ElliotPender @J_Mezzer smiling after he received a text from his dad saying suck him off :))</span><br><span class="line">@cosplayamerica I&#x27;ll be there around 10. My train was delayed. :(</span><br></pre></td></tr></table></figure>
+
+<p>Visualize:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Declare a figure with a custom size</span></span><br><span class="line">fig = plt.figure(figsize=(<span class="number">5</span>, <span class="number">5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># labels for the two classes</span></span><br><span class="line">labels = <span class="string">&#x27;Positives&#x27;</span>, <span class="string">&#x27;Negative&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sizes for each slide</span></span><br><span class="line">sizes = [<span class="built_in">len</span>(all_positive_tweets), <span class="built_in">len</span>(all_negative_tweets)] </span><br><span class="line"></span><br><span class="line"><span class="comment"># Declare pie chart, where the slices will be ordered and plotted counter-clockwise:</span></span><br><span class="line">plt.pie(sizes, labels=labels, autopct=<span class="string">&#x27;%1.1f%%&#x27;</span>,</span><br><span class="line">        shadow=<span class="literal">True</span>, startangle=<span class="number">90</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Equal aspect ratio ensures that pie is drawn as a circle.</span></span><br><span class="line">plt.axis(<span class="string">&#x27;equal&#x27;</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># Display the chart</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>Visualizing the data is always a gooddd habit.</p>
+</blockquote>
+<p><strong>Data preprocessing:</strong></p>
+<blockquote>
+<p>For NLP, the preprocessing steps are comprised of the following tasks:</p>
+<ul>
+<li>Tokenizing the string</li>
+<li>Lowercasing</li>
+<li>Removing stop words and punctuation</li>
+<li>Stemming</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># download the stopwords from NLTK</span></span><br><span class="line">nltk.download(<span class="string">&#x27;stopwords&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Stop words are words that don’t add significant meaning to the text. </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re                                  <span class="comment"># library for regular expression operations</span></span><br><span class="line"><span class="keyword">import</span> string                              <span class="comment"># for string operations</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> nltk.corpus <span class="keyword">import</span> stopwords          <span class="comment"># module for stop words that come with NLTK</span></span><br><span class="line"><span class="keyword">from</span> nltk.stem <span class="keyword">import</span> PorterStemmer        <span class="comment"># module for stemming</span></span><br><span class="line"><span class="keyword">from</span> nltk.tokenize <span class="keyword">import</span> TweetTokenizer   <span class="comment"># module for tokenizing strings</span></span><br></pre></td></tr></table></figure>
+
+<p>Remove rubish text that is not helpful for our sentiment prediction task in Twitter dataset such as hashtag, retweet marks, and hyperlinks:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\033[92m&#x27;</span> + tweet)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\033[94m&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># remove old style retweet text &quot;RT&quot;</span></span><br><span class="line">tweet2 = re.sub(<span class="string">r&#x27;^RT[\s]+&#x27;</span>, <span class="string">&#x27;&#x27;</span>, tweet)</span><br><span class="line"></span><br><span class="line"><span class="comment"># remove hyperlinks</span></span><br><span class="line">tweet2 = re.sub(<span class="string">r&#x27;https?:\/\/.*[\r\n]*&#x27;</span>, <span class="string">&#x27;&#x27;</span>, tweet2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># remove hashtags</span></span><br><span class="line"><span class="comment"># only removing the hash # sign from the word</span></span><br><span class="line">tweet2 = re.sub(<span class="string">r&#x27;#&#x27;</span>, <span class="string">&#x27;&#x27;</span>, tweet2)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(tweet2)</span><br></pre></td></tr></table></figure>
+
+<p>Run result:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">RT @sd My beautiful sunflowers on a sunny Friday morning off :) #sunflowers #favourites #happy #Friday off… https://t.co/3tfYom0N1i</span><br><span class="line"></span><br><span class="line">@sd My beautiful sunflowers on a sunny Friday morning off :) sunflowers favourites happy Friday off… </span><br></pre></td></tr></table></figure>
+
+<p><strong>To tokenize means to split the strings into individual words without blanks or tabs.</strong> In this same step, we will also convert each word in the string to lower case. The <a target="_blank" rel="noopener" href="https://www.nltk.org/api/nltk.tokenize.html#module-nltk.tokenize.casual">tokenize</a> module from NLTK allows us to do these easily:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\033[92m&#x27;</span> + tweet2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\033[94m&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># instantiate tokenizer class</span></span><br><span class="line">tokenizer = TweetTokenizer(preserve_case=<span class="literal">False</span>, strip_handles=<span class="literal">True</span>,</span><br><span class="line">                               reduce_len=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># strip_handles=True 以 @ 开头的用户名会被移除。这通常在情感分析等任务中很有用，因为用户名本身通常不包含情感信息，而可能是噪声。</span></span><br><span class="line"><span class="comment"># reduce_len=True 会将长度为3或更长的重复字符序列缩减为长度为3的序列。例如，&quot;coooool&quot; 会变成 &quot;coool&quot;，&quot;loooooove&quot; 会变成 &quot;loove&quot;。这对于处理口语化、带有情感色彩的重复字符（如 &quot;happyyyyy&quot;）非常有用，可以减少词汇量的膨胀，并提高词形归一化的效果。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># tokenize tweets</span></span><br><span class="line">tweet_tokens = tokenizer.tokenize(tweet2)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Tokenized string:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tweet_tokens)</span><br></pre></td></tr></table></figure>
+
+<p>Result:</p>
+<p>primary string:<code>My beautiful sunflowers on a sunny Friday morning off :) sunflowers favourites happy Friday off… </code></p>
+<p>Tokenized string:<code>[&#39;my&#39;, &#39;beautiful&#39;, &#39;sunflowers&#39;, &#39;on&#39;, &#39;a&#39;, &#39;sunny&#39;, &#39;friday&#39;, &#39;morning&#39;, &#39;off&#39;, &#39;:)&#39;, &#39;sunflowers&#39;, &#39;favourites&#39;, &#39;happy&#39;, &#39;friday&#39;, &#39;off&#39;, &#39;…&#39;]</code></p>
+</blockquote>
+<p>这样整理不高效，我以后只整理主要思路和关键细节。总体代码可以自己敲一遍</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> nltk.corpus <span class="keyword">import</span> stopwords</span><br><span class="line"><span class="keyword">from</span> nltk.stem <span class="keyword">import</span> PorterStemmer</span><br><span class="line"><span class="keyword">from</span> nltk.tokenize <span class="keyword">import</span> TweetTokenizer</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">process_tweet</span>(<span class="params">tweet</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Process tweet function.</span></span><br><span class="line"><span class="string">    Input:</span></span><br><span class="line"><span class="string">        tweet: a string containing a tweet</span></span><br><span class="line"><span class="string">    Output:</span></span><br><span class="line"><span class="string">        tweets_clean: a list of words containing the processed tweet</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    stemmer = PorterStemmer()</span><br><span class="line">    stopwords_english = stopwords.words(<span class="string">&#x27;english&#x27;</span>)</span><br><span class="line">    <span class="comment"># remove stock market tickers like $GE</span></span><br><span class="line">    tweet = re.sub(<span class="string">r&#x27;\$\w*&#x27;</span>, <span class="string">&#x27;&#x27;</span>, tweet)</span><br><span class="line">    <span class="comment"># remove old style retweet text &quot;RT&quot;</span></span><br><span class="line">    tweet = re.sub(<span class="string">r&#x27;^RT[\s]+&#x27;</span>, <span class="string">&#x27;&#x27;</span>, tweet)</span><br><span class="line">    <span class="comment"># remove hyperlinks</span></span><br><span class="line">    tweet = re.sub(<span class="string">r&#x27;https?:\/\/.*[\r\n]*&#x27;</span>, <span class="string">&#x27;&#x27;</span>, tweet)</span><br><span class="line">    <span class="comment"># remove hashtags</span></span><br><span class="line">    <span class="comment"># only removing the hash # sign from the word</span></span><br><span class="line">    tweet = re.sub(<span class="string">r&#x27;#&#x27;</span>, <span class="string">&#x27;&#x27;</span>, tweet)</span><br><span class="line">    <span class="comment"># tokenize tweets</span></span><br><span class="line">    tokenizer = TweetTokenizer(preserve_case=<span class="literal">False</span>, strip_handles=<span class="literal">True</span>,</span><br><span class="line">                               reduce_len=<span class="literal">True</span>)</span><br><span class="line">    tweet_tokens = tokenizer.tokenize(tweet)</span><br><span class="line"></span><br><span class="line">    tweets_clean = []</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> tweet_tokens:</span><br><span class="line">        <span class="keyword">if</span> (word <span class="keyword">not</span> <span class="keyword">in</span> stopwords_english <span class="keyword">and</span>  <span class="comment"># remove stopwords</span></span><br><span class="line">                word <span class="keyword">not</span> <span class="keyword">in</span> string.punctuation):  <span class="comment"># remove punctuation</span></span><br><span class="line">            <span class="comment"># tweets_clean.append(word)</span></span><br><span class="line">            stem_word = stemmer.stem(word)  <span class="comment"># stemming word</span></span><br><span class="line">            tweets_clean.append(stem_word)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> tweets_clean</span><br></pre></td></tr></table></figure>
+
+<h3 id="Building-and-Visualizing-word-frequencies"><a href="#Building-and-Visualizing-word-frequencies" class="headerlink" title="Building and Visualizing word frequencies"></a>Building and Visualizing word frequencies</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">build_freqs</span>(<span class="params">tweets, ys</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Build frequencies.</span></span><br><span class="line"><span class="string">    Input:</span></span><br><span class="line"><span class="string">        tweets: a list of tweets</span></span><br><span class="line"><span class="string">        ys: an m x 1 array with the sentiment label of each tweet</span></span><br><span class="line"><span class="string">            (either 0 or 1)</span></span><br><span class="line"><span class="string">    Output:</span></span><br><span class="line"><span class="string">        freqs: a dictionary mapping each (word, sentiment) pair to its</span></span><br><span class="line"><span class="string">        frequency</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    yslist = np.squeeze(ys).tolist()</span><br><span class="line">    freqs = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> tweet, senti_label <span class="keyword">in</span> <span class="built_in">zip</span>(tweets,yslist):</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span>  process_tweet(tweet):</span><br><span class="line">            pair = (word,senti_label)</span><br><span class="line">            freqs[pair] = freqs.get(pair,<span class="number">0</span>) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> freqs</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">build_freqs</span>(<span class="params">tweets, ys</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Build frequencies.</span></span><br><span class="line"><span class="string">    Input:</span></span><br><span class="line"><span class="string">        tweets: a list of tweets</span></span><br><span class="line"><span class="string">        ys: an m x 1 array with the sentiment label of each tweet</span></span><br><span class="line"><span class="string">            (either 0 or 1)</span></span><br><span class="line"><span class="string">    Output:</span></span><br><span class="line"><span class="string">        freqs: a dictionary mapping each (word, sentiment) pair to its</span></span><br><span class="line"><span class="string">        frequency</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    freqs = &#123;&#125;</span><br><span class="line">    yslist = np.squeeze(ys).tolist()</span><br><span class="line">    <span class="keyword">for</span> tweet,y <span class="keyword">in</span> <span class="built_in">zip</span>(tweets,ys):</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> process_tweet(tweet):</span><br><span class="line">            pair = (word,y)</span><br><span class="line">            <span class="keyword">if</span> pair <span class="keyword">in</span> freqs:</span><br><span class="line">                freqs[pair] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                freqs[pair] = <span class="number">1</span></span><br><span class="line">	<span class="keyword">return</span> freqs</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">build_freqs</span>(<span class="params">tweets, ys</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Build frequencies.</span></span><br><span class="line"><span class="string">    Input:</span></span><br><span class="line"><span class="string">        tweets: a list of tweets</span></span><br><span class="line"><span class="string">        ys: an m x 1 array with the sentiment label of each tweet</span></span><br><span class="line"><span class="string">            (either 0 or 1)</span></span><br><span class="line"><span class="string">    Output:</span></span><br><span class="line"><span class="string">        freqs: a dictionary mapping each (word, sentiment) pair to its</span></span><br><span class="line"><span class="string">        frequency</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># Convert np array to list since zip needs an iterable.</span></span><br><span class="line">    <span class="comment"># The squeeze is necessary or the list ends up with one element.</span></span><br><span class="line">    <span class="comment"># Also note that this is just a NOP if ys is already a list.</span></span><br><span class="line">    yslist = np.squeeze(ys).tolist()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Start with an empty dictionary and populate it by looping over all tweets</span></span><br><span class="line">    <span class="comment"># and over all processed words in each tweet.</span></span><br><span class="line">    freqs = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> y, tweet <span class="keyword">in</span> <span class="built_in">zip</span>(yslist, tweets):</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> process_tweet(tweet):</span><br><span class="line">            pair = (word, y)</span><br><span class="line">            <span class="keyword">if</span> pair <span class="keyword">in</span> freqs:</span><br><span class="line">                freqs[pair] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                freqs[pair] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> freqs</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># select some words to appear in the report. we will assume that each word is unique (i.e. no duplicates)</span></span><br><span class="line">keys = [<span class="string">&#x27;happi&#x27;</span>, <span class="string">&#x27;merri&#x27;</span>, <span class="string">&#x27;nice&#x27;</span>, <span class="string">&#x27;good&#x27;</span>, <span class="string">&#x27;bad&#x27;</span>, <span class="string">&#x27;sad&#x27;</span>, <span class="string">&#x27;mad&#x27;</span>, <span class="string">&#x27;best&#x27;</span>, <span class="string">&#x27;pretti&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;❤&#x27;</span>, <span class="string">&#x27;:)&#x27;</span>, <span class="string">&#x27;:(&#x27;</span>, <span class="string">&#x27;😒&#x27;</span>, <span class="string">&#x27;😬&#x27;</span>, <span class="string">&#x27;😄&#x27;</span>, <span class="string">&#x27;😍&#x27;</span>, <span class="string">&#x27;♛&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;song&#x27;</span>, <span class="string">&#x27;idea&#x27;</span>, <span class="string">&#x27;power&#x27;</span>, <span class="string">&#x27;play&#x27;</span>, <span class="string">&#x27;magnific&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># list representing our table of word counts.</span></span><br><span class="line"><span class="comment"># each element consist of a sublist with this pattern: [&lt;word&gt;, &lt;positive_count&gt;, &lt;negative_count&gt;]</span></span><br><span class="line">data = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># loop through our selected words</span></span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> keys:</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># initialize positive and negative counts</span></span><br><span class="line">    pos = <span class="number">0</span></span><br><span class="line">    neg = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># retrieve number of positive counts</span></span><br><span class="line">    <span class="keyword">if</span> (word, <span class="number">1</span>) <span class="keyword">in</span> freqs:</span><br><span class="line">        pos = freqs[(word, <span class="number">1</span>)]</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># retrieve number of negative counts</span></span><br><span class="line">    <span class="keyword">if</span> (word, <span class="number">0</span>) <span class="keyword">in</span> freqs:</span><br><span class="line">        neg = freqs[(word, <span class="number">0</span>)]</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># append the word counts to the table</span></span><br><span class="line">    data.append([word, pos, neg])</span><br><span class="line">    </span><br><span class="line">data</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig, ax = plt.subplots(figsize = (<span class="number">8</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># convert positive raw counts to logarithmic scale. we add 1 to avoid log(0)</span></span><br><span class="line">x = np.log([x[<span class="number">1</span>] + <span class="number">1</span> <span class="keyword">for</span> x <span class="keyword">in</span> data])  </span><br><span class="line"></span><br><span class="line"><span class="comment"># do the same for the negative counts</span></span><br><span class="line">y = np.log([x[<span class="number">2</span>] + <span class="number">1</span> <span class="keyword">for</span> x <span class="keyword">in</span> data]) </span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot a dot for each pair of words</span></span><br><span class="line">ax.scatter(x, y)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># assign axis labels</span></span><br><span class="line">plt.xlabel(<span class="string">&quot;Log Positive count&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;Log Negative count&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add the word as the label at the same position as you added the points just before</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(data)):</span><br><span class="line">    ax.annotate(data[i][<span class="number">0</span>], (x[i], y[i]), fontsize=<span class="number">12</span>)</span><br><span class="line"></span><br><span class="line">ax.plot([<span class="number">0</span>, <span class="number">9</span>], [<span class="number">0</span>, <span class="number">9</span>], color = <span class="string">&#x27;red&#x27;</span>) <span class="comment"># Plot the red line that divides the 2 areas.</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="Visualizing-tweets-and-the-Logistic-Regression-model"><a href="#Visualizing-tweets-and-the-Logistic-Regression-model" class="headerlink" title="Visualizing tweets and the Logistic Regression model"></a>Visualizing tweets and the Logistic Regression model</h3><p><img src="https://cdn.jsdelivr.net/gh/idealistichacker/BlogPicGo/img/image-20250530191703271.png" alt="image-20250530191703271"></p>
+<ol>
+<li><p>学会了算决策边界，用z（x）&#x3D; logistics regression函数当分类函数的话，z&gt;&#x3D;0.5可归为正类，z&lt;0.5归为负类。而使得z（x）&#x3D;0.5的x值为0所以$\theta \cdot x &#x3D; 0$若$\theta$已知便可以得到决策边界。</p>
+</li>
+<li><p>所用分类函数的梯度方向为决策箭头的方向</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/idealistichacker/BlogPicGo/img/image-20250530184732516.png" alt="image-20250530184732516"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://idealistichacker.github.io.git">寒酥梦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://idealistichacker.github.io.git/undefined/29c6b951.html">http://idealistichacker.github.io.git/undefined/29c6b951.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://idealistichacker.github.io.git" target="_blank">寒酥梦的温暖小窝（施工中ing）</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CS/">CS</a><a class="post-meta__tags" href="/tags/NLP/">NLP</a></div><div class="post-share"><div class="social-share" data-image="/./img/essay.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/undefined/2550c46e.html" title="Full Stack Learning Note"><img class="cover" src="/./img/essay.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Full Stack Learning Note</div></div><div class="info-2"><div class="info-item-1">Full Stack Learning Note</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/undefined/18be5b09.html" title="Conda 与 Python 虚拟环境"><img class="cover" src="/./img/essay.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-30</div><div class="info-item-2">Conda 与 Python 虚拟环境</div></div><div class="info-2"><div class="info-item-1">Conda 与 Python 虚拟环境的零碎收集</div></div></div></a><a class="pagination-related" href="/undefined/c5317df1.html" title="Machine Learning"><img class="cover" src="/./img/essay.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-08</div><div class="info-item-2">Machine Learning</div></div><div class="info-2"><div class="info-item-1">吴恩达机器学习笔记</div></div></div></a><a class="pagination-related" href="/undefined/2550c46e.html" title="Full Stack Learning Note"><img class="cover" src="/./img/essay.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-04</div><div class="info-item-2">Full Stack Learning Note</div></div><div class="info-2"><div class="info-item-1">Full Stack Learning Note</div></div></div></a><a class="pagination-related" href="/undefined/c63e013e.html" title="用pymysql操作本地MySQL数据库与用pymongo操作本地mongoDB数据库"><img class="cover" src="/./img/essay.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-29</div><div class="info-item-2">用pymysql操作本地MySQL数据库与用pymongo操作本地mongoDB数据库</div></div><div class="info-2"><div class="info-item-1">用pymysql操作本地MySQL数据库与用pymongo操作本地mongoDB数据库</div></div></div></a><a class="pagination-related" href="/undefined/595564f1.html" title="血的教训"><img class="cover" src="/./img/essay.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-15</div><div class="info-item-2">血的教训</div></div><div class="info-2"><div class="info-item-1">自己学习计算机过程中踩的一些坑和经验记录</div></div></div></a><a class="pagination-related" href="/undefined/954e6bbd.html" title="一些计算机科学中的小细节"><img class="cover" src="/./img/essay.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-30</div><div class="info-item-2">一些计算机科学中的小细节</div></div><div class="info-2"><div class="info-item-1">学习中一些计算机科学中的小细节的收集</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/./img/ava.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">寒酥梦</div><div class="author-info-description">朝来试看青枝上，几朵寒酥未肯消</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/idealistichacker"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/idealistichacker" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1830580543@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=448372232" target="_blank" title="网易云"><i class="fa-solid fa-headphones"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">你好！欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NLP%E5%AD%A6%E4%B9%A0%E6%A2%B3%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">NLP学习梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%B4%E6%81%A9%E8%BE%BE%E3%80%8A%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86-natural-language-processing%E3%80%8BLesson1"><span class="toc-number">1.1.</span> <span class="toc-text">吴恩达《自然语言处理|natural language processing》Lesson1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Week1"><span class="toc-number">1.1.1.</span> <span class="toc-text">Week1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Preprocess"><span class="toc-number">1.1.2.</span> <span class="toc-text">Preprocess</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.3.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Building-and-Visualizing-word-frequencies"><span class="toc-number">1.1.4.</span> <span class="toc-text">Building and Visualizing word frequencies</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Visualizing-tweets-and-the-Logistic-Regression-model"><span class="toc-number">1.1.5.</span> <span class="toc-text">Visualizing tweets and the Logistic Regression model</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/undefined/29c6b951.html" title="NLP学习梳理"><img src="/./img/essay.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NLP学习梳理"/></a><div class="content"><a class="title" href="/undefined/29c6b951.html" title="NLP学习梳理">NLP学习梳理</a><time datetime="2025-06-05T14:36:00.000Z" title="发表于 2025-06-05 22:36:00">2025-06-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/undefined/2550c46e.html" title="Full Stack Learning Note"><img src="/./img/essay.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Full Stack Learning Note"/></a><div class="content"><a class="title" href="/undefined/2550c46e.html" title="Full Stack Learning Note">Full Stack Learning Note</a><time datetime="2025-06-04T14:42:00.000Z" title="发表于 2025-06-04 22:42:00">2025-06-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/undefined/52d8acbc.html" title="数据库系统概论期末总复习笔记"><img src="/./img/essay.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库系统概论期末总复习笔记"/></a><div class="content"><a class="title" href="/undefined/52d8acbc.html" title="数据库系统概论期末总复习笔记">数据库系统概论期末总复习笔记</a><time datetime="2025-06-02T14:37:00.000Z" title="发表于 2025-06-02 22:37:00">2025-06-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/undefined/833b6b83.html" title="春宵苦短，少女前进吧！"><img src="/./img/essay.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="春宵苦短，少女前进吧！"/></a><div class="content"><a class="title" href="/undefined/833b6b83.html" title="春宵苦短，少女前进吧！">春宵苦短，少女前进吧！</a><time datetime="2025-05-24T15:50:00.000Z" title="发表于 2025-05-24 23:50:00">2025-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/undefined/8eb35da.html" title="中长跑知识集录"><img src="/./img/essay.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="中长跑知识集录"/></a><div class="content"><a class="title" href="/undefined/8eb35da.html" title="中长跑知识集录">中长跑知识集录</a><time datetime="2025-05-03T03:46:00.000Z" title="发表于 2025-05-03 11:46:00">2025-05-03</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(./img/essay.jpg);"><div id="footer-wrap"><div class="copyright">&copy;2025 By 寒酥梦</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">亲爱的朋友，祝你今天过得愉快！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="13216346882" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="true"> </div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="你在找什么(≧ω≦)？" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
