@@ -1,0 +1,313 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>CS61a Learning Note | 寒酥梦的温暖小窝（施工中ing）</title><meta name="author" content="寒酥梦"><meta name="copyright" content="寒酥梦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="print(print(1),print(2))&#96;&#96;&#96;12None None&#96;&#96;&#96;# print() is Non-Pure Functions  Casual Literary NotesNote: When we say condition is a predicate function, we mean that it is a function that will return T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS61a Learning Note">
+<meta property="og:url" content="http://idealistichacker.github.io.git/undefined/53be1f01.html">
+<meta property="og:site_name" content="寒酥梦的温暖小窝（施工中ing）">
+<meta property="og:description" content="print(print(1),print(2))&#96;&#96;&#96;12None None&#96;&#96;&#96;# print() is Non-Pure Functions  Casual Literary NotesNote: When we say condition is a predicate function, we mean that it is a function that will return T">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://idealistichacker.github.io.git/img/essay.jpg">
+<meta property="article:published_time" content="2025-07-04T11:22:00.000Z">
+<meta property="article:modified_time" content="2025-08-28T12:44:47.563Z">
+<meta property="article:author" content="寒酥梦">
+<meta property="article:tag" content="博客，寒酥梦">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://idealistichacker.github.io.git/img/essay.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CS61a Learning Note",
+  "url": "http://idealistichacker.github.io.git/undefined/53be1f01.html",
+  "image": "http://idealistichacker.github.io.git/img/essay.jpg",
+  "datePublished": "2025-07-04T11:22:00.000Z",
+  "dateModified": "2025-08-28T12:44:47.563Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "寒酥梦",
+      "url": "http://idealistichacker.github.io.git/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://idealistichacker.github.io.git/undefined/53be1f01.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":3,"unescape":true,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CS61a Learning Note',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background: linear-gradient(135deg, #87CEEB 10%, #00BFFF 100%);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/./img/ava.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">24</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光小溪</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(./img/essay.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">寒酥梦的温暖小窝（施工中ing）</span></a><a class="nav-page-title" href="/"><span class="site-name">CS61a Learning Note</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光小溪</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">CS61a Learning Note<a class="post-edit-link" href="https://space.bilibili.com/23191782?spm_id_from=333.337.0.0_posts/计算机/2025-07-04-CS61a-Learning-Note.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-04T11:22:00.000Z" title="发表于 2025-07-04 19:22:00">2025-07-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-28T12:44:47.563Z" title="更新于 2025-08-28 20:44:47">2025-08-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">943</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p><img src="https://cdn.jsdelivr.net/gh/idealistichacker/BlogPicGo/img/image-20250704192310375.png" alt="image-20250704192310375"></p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/idealistichacker/BlogPicGo/img/image-20250704192722874.png" alt="image-20250704192722874"></p>
+<hr>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">print</span>(<span class="number">1</span>),<span class="built_in">print</span>(<span class="number">2</span>))</span><br><span class="line">```</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="literal">None</span> <span class="literal">None</span></span><br><span class="line">```</span><br><span class="line"><span class="comment"># print() is Non-Pure Functions</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Casual-Literary-Notes"><a href="#Casual-Literary-Notes" class="headerlink" title="Casual Literary Notes"></a>Casual Literary Notes</h2><p><strong>Note:</strong> When we say <code>condition</code> is a predicate function, we mean that it is a function that will return <code>True</code> or <code>False</code>.</p>
+<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><h3 id="Q5-Count-Stair-Ways"><a href="#Q5-Count-Stair-Ways" class="headerlink" title="Q5: Count Stair Ways"></a>Q5: Count Stair Ways</h3><p>Imagine that you want to go up a flight of stairs that has <code>n</code> steps, where <code>n</code> is a positive integer. You can take either <strong>one</strong> or <strong>two steps</strong> each time you move. In how many ways can you go up the entire flight of stairs?</p>
+<p>You’ll write a function <code>count_stair_ways</code> to answer this question. Before you write any code, consider:</p>
+<ul>
+<li>How many ways are there to go up a flight of stairs with <code>n = 1</code> step? What about <code>n = 2</code> steps? Try writing or drawing out some other examples and see if you notice any patterns.</li>
+</ul>
+<p><strong>Solution</strong>: When there is only one step, there is only one way to go up. When there are two steps, we can go up in two ways: take a single 2-step, or take two 1-steps.</p>
+<ul>
+<li>What is the base case for this question? What is the smallest input?</li>
+</ul>
+<p><strong>Solution</strong>: We actually have two base cases! Our first base case is when there is one step left. <code>n = 1</code> is the smallest input because 1 is the smallest positive integer.</p>
+<p>Our second base case is when there are two steps left. The primary solution (found below) cannot solve <code>count_stair_ways(2)</code> recursively because <code>count_stair_ways(0)</code> is undefined.</p>
+<p>(<code>virfib</code> has two base cases for a similar reason: <code>virfib(1)</code> cannot be solved recursively because <code>virfib(-1)</code> is undefined.)</p>
+<p><strong>Alternate solution</strong>: Our first base case is when there are no steps left. This means we reached the top of the stairs with our last action.</p>
+<p>Our second base case is when we have overstepped. This means our last action was invalid; in other words, we took two steps when only one step remained.</p>
+<p><strong>Solution</strong>: <code>count_stair_ways(n - 1)</code> is the number of ways to go up <code>n - 1</code> stairs. Equivalently, <code>count_stair_ways(n - 1)</code> is the number of ways to go up <code>n</code> stairs if our first action is taking one step.</p>
+<p><code>count_stair_ways(n - 2)</code> is the number of ways to go up <code>n - 2</code> stairs. Equivalently, <code>count_stair_ways(n - 2)</code> is the number of ways to go up <code>n</code> stairs if our first action is taking two steps.</p>
+<p>Now, fill in the code for <code>count_stair_ways</code>:</p>
+<p><strong>Your Answer</strong></p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+<p>10</p>
+<p>11</p>
+<p>12</p>
+<p>13</p>
+<p><a href="javascript:void">Run in 61A Code</a></p>
+<p><a target="_blank" rel="noopener" href="https://disc.cs61a.org/oauth/login">Log in to save your work!</a></p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">count_stair_ways</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Returns the number of ways to climb up a flight of</span></span><br><span class="line"><span class="string">    n stairs, moving either one step or two steps at a time.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; count_stair_ways(1)</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; count_stair_ways(2)</span></span><br><span class="line"><span class="string">    2</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; count_stair_ways(4)</span></span><br><span class="line"><span class="string">    5</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> count_stair_ways(n-<span class="number">1</span>) + count_stair_ways(n-<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Here’s an alternate solution that corresponds to the alternate base cases:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">count_stair_ways_alt</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Returns the number of ways to climb up a flight of</span></span><br><span class="line"><span class="string">    n stairs, moving either 1 step or 2 steps at a time.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; count_stair_ways_alt(4)</span></span><br><span class="line"><span class="string">    5</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> n &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> count_stair_ways_alt(n-<span class="number">1</span>) + count_stair_ways_alt(n-<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>You can use [Recursion Visualizer](<a target="_blank" rel="noopener" href="https://www.recursionvisualizer.com/?function_definition=def">https://www.recursionvisualizer.com/?function_definition=def</a> count_stair_ways(n)%3A    if n %3D%3D 1%3A        return 1    elif n %3D%3D 2%3A        return 2    return count_stair_ways(n-1) %2B count_stair_ways(n-2)&amp;function_call&#x3D;count_stair_ways(4)) to step through the call structure of <code>count_stair_ways(4)</code> for the primary solution.</p>
+<p>You’re done! Excellent work this week. Please be sure to fill out your TA’s attendance form to get credit for this discussion!</p>
+<h3 id="Q6-Subsequences"><a href="#Q6-Subsequences" class="headerlink" title="Q6: Subsequences"></a>Q6: Subsequences</h3><p>A subsequence of a sequence <code>S</code> is a subset of elements from <code>S</code>, in the same order they appear in <code>S</code>. Consider the list <code>[1, 2, 3]</code>. Here are a few of its subsequences <code>[]</code>, <code>[1, 3]</code>, <code>[2]</code>, and <code>[1, 2, 3]</code>.</p>
+<p>Write a function that takes in a list and returns all possible subsequences of that list. The subsequences should be returned as a list of lists, where each nested list is a subsequence of the original input.</p>
+<p>In order to accomplish this, you might first want to write a function <code>insert_into_all</code> that takes an item and a list of lists, adds the item to the beginning of each nested list, and returns the resulting list.</p>
+<p><strong>Your Answer</strong></p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+<p>10</p>
+<p>11</p>
+<p>12</p>
+<p>13</p>
+<p>14</p>
+<p>15</p>
+<p>16</p>
+<p>17</p>
+<p>18</p>
+<p>19</p>
+<p>20</p>
+<p>21</p>
+<p>22</p>
+<p>23</p>
+<p>24</p>
+<p>25</p>
+<p>26</p>
+<p>27</p>
+<p>28</p>
+<p><a href="javascript:void">Run in 61A Code</a></p>
+<p><a target="_blank" rel="noopener" href="https://disc.cs61a.org/oauth/login">Log in to save your work!</a></p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">insert_into_all</span>(<span class="params">item, nested_list</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return a new list consisting of all the lists in nested_list,</span></span><br><span class="line"><span class="string">    but with item added to the front of each. You can assume that</span></span><br><span class="line"><span class="string">    nested_list is a list of lists.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; nl = [[], [1, 2], [3]]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; insert_into_all(0, nl)</span></span><br><span class="line"><span class="string">    [[0], [0, 1, 2], [0, 3]]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> [[item] + lst <span class="keyword">for</span> lst <span class="keyword">in</span> nested_list]</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">subseqs</span>(<span class="params">s</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return a nested list (a list of lists) of all subsequences of S.</span></span><br><span class="line"><span class="string">    The subsequences can appear in any order. You can assume S is a list.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; seqs = subseqs([1, 2, 3])</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; sorted(seqs)</span></span><br><span class="line"><span class="string">    [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; subseqs([])</span></span><br><span class="line"><span class="string">    [[]]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">        <span class="keyword">return</span> [[]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        subset = subseqs(s[<span class="number">1</span>:])</span><br><span class="line">        <span class="keyword">return</span> insert_into_all(s[<span class="number">0</span>], subset) + subset</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://idealistichacker.github.io.git">寒酥梦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://idealistichacker.github.io.git/undefined/53be1f01.html">http://idealistichacker.github.io.git/undefined/53be1f01.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://idealistichacker.github.io.git" target="_blank">寒酥梦的温暖小窝（施工中ing）</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/./img/essay.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/undefined/5312e9c1.html" title="小闲聊"><img class="cover" src="/./img/essay.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">小闲聊</div></div><div class="info-2"><div class="info-item-1">他是头一位这么真诚地评论我发型的人，我很开心</div></div></div></a><a class="pagination-related" href="/undefined/963a0f18.html" title="卧铺奇遇"><img class="cover" src="/./img/essay.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">卧铺奇遇</div></div><div class="info-2"><div class="info-item-1">浮在北方一望无际大平原上的阳光软软地浸透了车窗流淌在我们之间，几缕发丝掠过她的眉梢，她就这么在小桌板上沙沙地写着，我在一旁默默地读着，心里感到无比的欢喜，有种奇妙的安详、静谧在我们这节车厢中升腾氤氲，而火车只是飘飘然沿着轨道向前行驶</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/./img/ava.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">寒酥梦</div><div class="author-info-description">朝来试看青枝上，几朵寒酥未肯消</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">24</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/idealistichacker"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/idealistichacker" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1830580543@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=448372232" target="_blank" title="网易云"><i class="fa-solid fa-headphones"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">你好！欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Casual-Literary-Notes"><span class="toc-number">1.</span> <span class="toc-text">Casual Literary Notes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Questions"><span class="toc-number">2.</span> <span class="toc-text">Questions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5-Count-Stair-Ways"><span class="toc-number">2.1.</span> <span class="toc-text">Q5: Count Stair Ways</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6-Subsequences"><span class="toc-number">2.2.</span> <span class="toc-text">Q6: Subsequences</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/undefined/29d0960.html" title="生活小妙招"><img src="/./img/essay.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="生活小妙招"/></a><div class="content"><a class="title" href="/undefined/29d0960.html" title="生活小妙招">生活小妙招</a><time datetime="2025-08-28T12:42:00.000Z" title="发表于 2025-08-28 20:42:00">2025-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/undefined/d4f04c39.html" title="《镜子、父亲、女人与疯子》梳理笔记"><img src="/./img/essay.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《镜子、父亲、女人与疯子》梳理笔记"/></a><div class="content"><a class="title" href="/undefined/d4f04c39.html" title="《镜子、父亲、女人与疯子》梳理笔记">《镜子、父亲、女人与疯子》梳理笔记</a><time datetime="2025-07-26T11:02:00.000Z" title="发表于 2025-07-26 19:02:00">2025-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/undefined/963a0f18.html" title="卧铺奇遇"><img src="/./img/essay.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="卧铺奇遇"/></a><div class="content"><a class="title" href="/undefined/963a0f18.html" title="卧铺奇遇">卧铺奇遇</a><time datetime="2025-07-26T07:38:00.000Z" title="发表于 2025-07-26 15:38:00">2025-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/undefined/53be1f01.html" title="CS61a Learning Note"><img src="/./img/essay.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS61a Learning Note"/></a><div class="content"><a class="title" href="/undefined/53be1f01.html" title="CS61a Learning Note">CS61a Learning Note</a><time datetime="2025-07-04T11:22:00.000Z" title="发表于 2025-07-04 19:22:00">2025-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/undefined/5312e9c1.html" title="小闲聊"><img src="/./img/essay.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="小闲聊"/></a><div class="content"><a class="title" href="/undefined/5312e9c1.html" title="小闲聊">小闲聊</a><time datetime="2025-06-28T11:14:00.000Z" title="发表于 2025-06-28 19:14:00">2025-06-28</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(./img/essay.jpg);"><div id="footer-wrap"><div class="copyright">&copy;2025 By 寒酥梦</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">亲爱的朋友，祝你今天过得愉快！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="13216346882" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="true"> </div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="你在找什么(≧ω≦)？" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
